@@ -1,9 +1,10 @@
-#numberButton{
+#producerOne{
     color: #bfbfbf;
     background-color: rgba(150, 150, 150, 0.59);
     border: 3px solid #7e7e7e;
     width: 15%;
     height: 75px;
-    margin: auto;
+    margin-left: 0.4%;
+    margin-top: 1%;
     text-align: center;
 }

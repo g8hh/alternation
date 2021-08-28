@@ -1,3 +1,6 @@
 .flexButton{
     display: flex;
 }
+.text{
+    color: white;
+}
