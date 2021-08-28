@@ -19,5 +19,5 @@ function buyProducer(x){
     }
 }
 window.setInterval(function(){
-    numberIncrease(gain)
-}, 1000);
+    numberIncrease(gain.div(100))
+}, 10);
