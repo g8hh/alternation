@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="src/BreakEternity.js"></script>
     <script src="src/game.js"></script>
     <script src="src/update.js"></script>
     <link rel="stylesheet" type="text/css" href="css/generalStyles.css" />
@@ -10,10 +11,12 @@
     <title>Incrementalal</title>
 </head>
 <body>
-    <div class="text" id="numberDisplay">Your Number is 0</div>
-    <div class="text" id="numberGainDisplay">You are gaining 0/s</div>
-    <div class="flexButton">
-        <button id="producerOne" onclick="buyProducer(1)">Producer 1<br>Cost: 10<br>Currently Producing 0/s</button>
+    <div class="numberText" id="numberDisplay">Your Number is 0</div>
+    <div class="numberText" id="numberGainDisplay">Your Number is Increasing by 0/s</div>
+    <div class="producersContainer">
+        <button class="producer" id="producerOne" onclick="buyProducer(1)">Producer 1<br>Cost: 10<br>Each one increases your Number by 1/s</button>
+        <button class="producer" id="producerTwo" onclick="buyProducer(2)">Producer 2<br>Cost: 150<br>Each one increases your Number by 10/s</button>
+        <button class="producer" id="producerThree" onclick="buyProducer(3)">Producer 3<br>Cost: 500<br>Each one increases your Number by 50/s</button>
     </div>
 </body>
 </html>

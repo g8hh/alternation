@@ -1,20 +1,20 @@
-let number = 10
-let gain = 0
-let producerCosts = [10]
-let producerIncreases = [1]
-let producerProductions = [0]
+let number = new Decimal(10)
+let gain = new Decimal(0)
+let producerCosts = [new Decimal(10), new Decimal(150), new Decimal(500)]
+let producerIncreases = [new Decimal(1), new Decimal(10), new Decimal(50)]
+let producerProductions = [new Decimal(0), new Decimal(0), new Decimal(0)]
 
 function numberIncrease(i) {
-    number += i
+    number = number.plus(i)
     updateHTML()
 }
 function buyProducer(x){
     let i = x-1
-    if (number >= producerCosts[i]){
-        number -= producerCosts[i]
-        producerCosts[i] *= 1.08
-        producerProductions[i] += producerIncreases[i]
-        gain += producerIncreases[i]
+    if (number.gte(producerCosts[i])){
+        number = number.sub(producerCosts[i])
+        producerCosts[i] = producerCosts[i].times(1.05)
+        producerProductions[i] = producerProductions[i].plus(producerIncreases[i])
+        gain = gain.plus(producerIncreases[i])
         updateHTML()
     }
 }
