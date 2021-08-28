@@ -1,0 +1,17 @@
+html {
+    background-color: black;
+}
+
+.flexButton{
+    display: flex;
+}
+
+#numberButton{
+    color: #bbff00;
+    background-color: #96969696;
+    border: 3px solid #009696;
+    width: 15%;
+    height: 75px;
+    margin: auto;
+    text-align: center;
+}
