@@ -14,7 +14,7 @@ let data = {
     multiBoosts: [new Decimal(0)],
 //misc
     currentTab: 1,
-    updateIDs: [0, 2, 0],
+    updateIDs: [0, 3, 0],
 }
 //decimal serializing
 let tagged_classes = new Map();
