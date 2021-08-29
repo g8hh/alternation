@@ -12,6 +12,17 @@ function buyProducer(x){
         updateHTML()
     }
 }
+function buyMulti(x){
+    let i = x-1
+    if (number.gte(multiCosts[i])){
+        number = number.sub(multiCosts[i]).plus(10)
+        multiBoosts[i] = multiBoosts[i].plus(multiIncreases[i])
+        multiCosts[i] = multiCosts[i].times(2)
+        increaserIncreases[i] = increaserIncreases[i].times(multiIncreases[i])
+        increaserCosts = [new Decimal(10), new Decimal(150), new Decimal(500)]
+        increaserProductions = [new Decimal(0), new Decimal(0), new Decimal(0)]
+    }
+}
 function switchTab(i){
     currentTab = i
     updateHTML()
