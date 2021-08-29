@@ -1,32 +1,33 @@
 function numberIncrease(i) {
-    number = number.plus(i)
+    data.number = data.number.plus(i)
     updateHTML()
 }
 function buyProducer(x){
-    let i = x-1
-    if (number.gte(increaserCosts[i])){
-        number = number.sub(increaserCosts[i])
-        increaserCosts[i] = increaserCosts[i].times(1.05)
-        increaserProductions[i] = increaserProductions[i].plus(increaserIncreases[i])
-        gain = gain.plus(increaserIncreases[i])
+    let i = new Decimal(x-1)
+    if (data.number.gte(data.increaserCosts[i])){
+        data.number = data.number.sub(data.increaserCosts[i])
+        data.increaserCosts[i] = data.increaserCosts[i].times(1.05)
+        data.increaserProductions[i] = data.increaserProductions[i].plus(data.increaserIncreases[i])
+        data.gain = data.gain.plus(data.increaserIncreases[i])
         updateHTML()
     }
 }
 function buyMulti(x){
     let i = x-1
-    if (number.gte(multiCosts[i])){
-        number = number.sub(multiCosts[i]).plus(10)
-        multiBoosts[i] = multiBoosts[i].plus(multiIncreases[i])
-        multiCosts[i] = multiCosts[i].times(2)
-        increaserIncreases[i] = increaserIncreases[i].times(multiIncreases[i])
-        increaserCosts = [new Decimal(10), new Decimal(150), new Decimal(500)]
-        increaserProductions = [new Decimal(0), new Decimal(0), new Decimal(0)]
+    if (data.number.gte(data.multiCosts[i])){
+        data.number = data.number.sub(data.multiCosts[i]).plus(10)
+        data.multiBoosts[i] = data.multiBoosts[i].plus(data.multiIncreases[i])
+        data.multiCosts[i] = data.multiCosts[i].times(2)
+        data.increaserIncreases[i] = data.increaserIncreases[i].times(data.multiIncreases[i])
+        data.increaserCosts = [new Decimal(10), new Decimal(150), new Decimal(500)]
+        data.increaserProductions = [new Decimal(0), new Decimal(0), new Decimal(0)]
     }
 }
 function switchTab(i){
-    currentTab = i
+    data.currentTab = i
     updateHTML()
 }
 window.setInterval(function(){
-    numberIncrease(gain.div(100))
+    if (loaded)
+    numberIncrease(data.gain.div(100))
 }, 10);

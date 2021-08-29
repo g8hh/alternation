@@ -1,7 +1,18 @@
 #versionText{
     color:white;
-    margin-left: 0.4%;
+    margin-left: 43%;
     margin-top: 0.5%;
+    text-align: center;}
+#temporaryCredits{
+    color:white;
+    text-align: center;
+    margin-left: 30%;
+}
+#fullReset{
+    background-color: #373737;
+    color: #d60000;
+    margin-top: 10%;
+    margin-left: 36%;
 }
 #increasersNav{
     color: #a5a5a5;
