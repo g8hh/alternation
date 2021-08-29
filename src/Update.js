@@ -13,7 +13,7 @@ function updateHTML(){
     document.getElementById("multiOne").innerHTML =
         `The Multiplier<br>Cost: ${format(data.multiCosts[0])}<br>Reset all of your Increaser 1-3s but multiply the production of Increaser 1 by 5x<br>Currently: ${data.multiBoosts[0]}x`
     //misc displays
-    document.getElementById("versionText").innerHTML = `[Alpha v${data.updateIDs[0]}.${data.updateIDs[1]}.${data.updateIDs[2]}]`
+    document.getElementById("versionText").innerHTML = `[Alpha v0.3.0}]`
 
     showAndHideStuff()
 }
