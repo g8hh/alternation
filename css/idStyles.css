@@ -1,5 +1,15 @@
 #versionText{
     color:white;
-    margin-top: 25%;
-    margin-left: 93%;
+    margin-left: 0.4%;
+    margin-top: 0.5%;
+}
+#increasersNav{
+    color: #a5a5a5;
+    background-color: #1c2829;
+    border: 3px solid #005260;
+}
+#settingsNav{
+    color: #000000;
+    background-color: #4c4c4c;
+    border: 3px solid #373737;
 }

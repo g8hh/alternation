@@ -12,6 +12,10 @@ function buyProducer(x){
         updateHTML()
     }
 }
+function switchTab(i){
+    currentTab = i
+    updateHTML()
+}
 window.setInterval(function(){
     numberIncrease(gain.div(100))
 }, 10);

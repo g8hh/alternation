@@ -7,6 +7,7 @@
     <script src="src/Variables.js"></script>
     <script src="src/Game.js"></script>
     <script src="src/Update.js"></script>
+    <script src="src/Saving.js"></script>
     <link rel="stylesheet" type="text/css" href="css/generalStyles.css" />
     <link rel="stylesheet" type="text/css" href="css/classStyles.css" />
     <link rel="stylesheet" type="text/css" href="css/idStyles.css" />
@@ -15,11 +16,15 @@
 <body>
     <div class="numberText" id="numberDisplay">Your Number is 0</div>
     <div class="numberText" id="numberGainDisplay">Your Number is Increasing by 0/s</div>
+    <div class="navBar">
+        <button class="navButton" id="increasersNav" onclick="switchTab(1)">Increasers</button>
+        <button class="navButton" id="settingsNav" onclick="switchTab(2)">Settings</button>
+    </div>
     <div class="producersContainer">
         <button class="producer" id="producerOne" onclick="buyProducer(1)">Increaser 1<br>Cost: 10<br>Each one increases your Number by 1/s</button>
         <button class="producer" id="producerTwo" onclick="buyProducer(2)">Increaser 2<br>Cost: 150<br>Each one increases your Number by 10/s</button>
         <button class="producer" id="producerThree" onclick="buyProducer(3)">Increaser 3<br>Cost: 500<br>Each one increases your Number by 50/s</button>
     </div>
-    <div id="versionText">[Alpha v0.0.0]</div>
+    <div class="settingsElement" id="versionText">[Alpha v0.0.0]</div>
 </body>
 </html>
