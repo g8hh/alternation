@@ -14,22 +14,24 @@
     <title>Incrementalal</title>
 </head>
 <body>
-    <div class="halfPointText" id="halfPointDisplay">Your Number is 0</div>
-    <div class="halfPointText" id="halfPointGainDisplay">Your Number is Increasing by 0/s</div>
-    <div class="navBar">
+    <div class="halfPointText flexBox" id="halfPointDisplay">Your Number is 0</div>
+    <div class="halfPointText flexBox" id="halfPointGainDisplay">Your Number is Increasing by 0/s</div>
+    <div class="navBar flexBox">
         <button class="navButton" id="destabilizersNav" onclick="switchTab(1)">Destabilizers</button>
         <button class="navButton" id="settingsNav" onclick="switchTab(2)">Settings</button>
     </div>
-    <div class="destabContainer">
+    <div class="destabContainer flexBox">
         <button class="destabilizer" id="destabOne" onclick="buyDestab(1)">Destabilizer 1<br>Cost: 10<br>Produces 1 Half Point</button>
         <button class="destabilizer" id="destabTwo" onclick="buyDestab(2)">Destabilizer 2<br>Cost: 150<br>Produces 1 Destabilizer 1</button>
         <button class="destabilizer" id="destabThree" onclick="buyDestab(3)">Destabilizer 3<br>Cost: 500<br>Produces 1 Destabilizer 2</button>
         <button class="destabilizer" id="destabFour" onclick="buyDestab(4)">Destabilizer 4<br>Cost: 500<br>Produces 1 Destabilizer 3</button>
     </div>
-    <div class="settingsElement" id="versionText">[Alpha v0.0.0]</div>
-    <div class ="settingsElement" id="temporaryCredits"><br>Temporary Credits :)<br>
+    <div class="settingsElement flexBox" id="versionText">[Alpha v0.0.0]</div>
+    <div class ="settingsElement flexBox" id="temporaryCredits"><br>Temporary Credits :)<br>
         Credit to Jayman#8158 for a lot of help with saving<br>Credit to thepaperpilot#1210 for a lot of general help with learning js/html/css
     </div>
-    <button class="settingsElement" id="fullReset" onclick="fullReset()">Delete Your Savefile [THIS CANNOT BE UNDONE!!!!]</button>
+    <div class="settingsElement flexBox">
+        <button id="fullReset" onclick="fullReset()">Delete Your Savefile [THIS CANNOT BE UNDONE!!!!]</button>
+    </div>
 </body>
 </html>

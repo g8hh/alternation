@@ -1,5 +1,9 @@
-.destabContainer{
+.flexBox {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.destabContainer{
     flex-direction: column;
 }
 .halfPointText{
@@ -12,14 +16,12 @@
     border: 3px solid #7e7e7e;
     width: 200px;
     height: 75px;
-    margin-left: 5px;
     margin-top: 10px;
     text-align: center;
 }
 .navBar{
     display: flex;
     margin-top: 15px;
-    margin-left: 100px;
 }
 .navButton{
     margin-left: 5px;
