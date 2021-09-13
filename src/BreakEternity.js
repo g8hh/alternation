@@ -43,7 +43,7 @@
         return result + truncated;
     };
 
-    var MAX_SIGNIFICANT_DIGITS = 17; //Maximum number of digits of precision to assume in Number
+    var MAX_SIGNIFICANT_DIGITS = 17; //Maximum halfPoints of digits of precision to assume in Number
 
     var EXP_LIMIT = 9e15; //If we're ABOVE this value, increase a layer. (9e15 is close to the largest integer that can fit in a Number.)
 
@@ -1360,17 +1360,17 @@
                 if (!Number.isFinite(this.layer)) { return this; }
                 if (!Number.isFinite(decimal.layer)) { return decimal; }
 
-                //Special case - if one of the numbers is 0, return the other number.
+                //Special case - if one of the numbers is 0, return the other halfPoints.
                 if (this.sign === 0) { return decimal; }
                 if (decimal.sign === 0) { return this; }
 
-                //Special case - Adding a number to its negation produces 0, no matter how large.
+                //Special case - Adding a halfPoints to its negation produces 0, no matter how large.
                 if (this.sign === -(decimal.sign) && this.layer === decimal.layer && this.mag === decimal.mag) { return FC_NN(0, 0, 0); }
 
                 var a;
                 var b;
 
-                //Special case: If one of the numbers is layer 2 or higher, just take the bigger number.
+                //Special case: If one of the numbers is layer 2 or higher, just take the bigger halfPoints.
                 if ((this.layer >= 2 || decimal.layer >= 2)) { return this.maxabs(decimal); }
 
                 if (Decimal.cmpabs(this, decimal) > 0)
@@ -1389,7 +1389,7 @@
                 var layera = a.layer*Math.sign(a.mag);
                 var layerb = b.layer*Math.sign(b.mag);
 
-                //If one of the numbers is 2+ layers higher than the other, just take the bigger number.
+                //If one of the numbers is 2+ layers higher than the other, just take the bigger halfPoints.
                 if (layera - layerb >= 2) { return a; }
 
                 if (layera === 0 && layerb === -1)
@@ -1460,13 +1460,13 @@
                 //Special case - if one of the numbers is 0, return 0.
                 if (this.sign === 0 || decimal.sign === 0) { return FC_NN(0, 0, 0); }
 
-                //Special case - Multiplying a number by its own reciprocal yields +/- 1, no matter how large.
+                //Special case - Multiplying a halfPoints by its own reciprocal yields +/- 1, no matter how large.
                 if (this.layer === decimal.layer && this.mag === -decimal.mag) { return FC_NN(this.sign*decimal.sign, 0, 1); }
 
                 var a;
                 var b;
 
-                //Which number is bigger in terms of its multiplicative distance from 1?
+                //Which halfPoints is bigger in terms of its multiplicative distance from 1?
                 if ((this.layer > decimal.layer) || (this.layer == decimal.layer && Math.abs(this.mag) > Math.abs(decimal.mag)))
                 {
                     a = this;
@@ -1480,7 +1480,7 @@
 
                 if (a.layer === 0 && b.layer === 0) { return D(a.sign*b.sign*a.mag*b.mag); }
 
-                //Special case: If one of the numbers is layer 3 or higher or one of the numbers is 2+ layers bigger than the other, just take the bigger number.
+                //Special case: If one of the numbers is layer 3 or higher or one of the numbers is 2+ layers bigger than the other, just take the bigger halfPoints.
                 if (a.layer >= 3 || (a.layer - b.layer >= 2)) { return FC(a.sign*b.sign, a.layer, a.mag); }
 
                 if (a.layer === 1 && b.layer === 0)
@@ -1659,8 +1659,8 @@
 
             /**
              * Tolerance is a relative tolerance, multiplied by the greater of the magnitudes of the two arguments.
-             * For example, if you put in 1e-9, then any number closer to the
-             * larger number than (larger number)*1e-9 will be considered equal.
+             * For example, if you put in 1e-9, then any halfPoints closer to the
+             * larger halfPoints than (larger halfPoints)*1e-9 will be considered equal.
              */
             Decimal.prototype.eq_tolerance = function (value, tolerance) {
                 var decimal = D(value); // https://stackoverflow.com/a/33024979
@@ -2057,7 +2057,7 @@
                 return this.tetrate(height, payload);
             }
 
-            //iterated log/repeated log: The result of applying log(base) 'times' times in a row. Approximately equal to subtracting (times) from the number's slog representation. Equivalent to tetrating to a negative height.
+            //iterated log/repeated log: The result of applying log(base) 'times' times in a row. Approximately equal to subtracting (times) from the halfPoints's slog representation. Equivalent to tetrating to a negative height.
             //Works with negative and positive real heights.
             Decimal.prototype.iteratedlog = function(base = 10, times = 1) {
                 if (times < 0)
@@ -2102,7 +2102,7 @@
                 return result;
             }
 
-            //Super-logarithm, one of tetration's inverses, tells you what size power tower you'd have to tetrate base to to get number. By definition, will never be higher than 1.8e308 in break_eternity.js, since a power tower 1.8e308 numbers tall is the largest representable number.
+            //Super-logarithm, one of tetration's inverses, tells you what size power tower you'd have to tetrate base to to get halfPoints. By definition, will never be higher than 1.8e308 in break_eternity.js, since a power tower 1.8e308 numbers tall is the largest representable halfPoints.
             // https://en.wikipedia.org/wiki/Super-logarithm
             Decimal.prototype.slog = function(base = 10) {
                 if (this.mag < 0) { return Decimal.dNegOne; }
@@ -2221,7 +2221,7 @@
                     }
                 }
 
-                //layeradd10: like adding 'diff' to the number's slog(base) representation. Very similar to tetrate base 10 and iterated log base 10. Also equivalent to adding a fractional amount to the number's layer in its break_eternity.js representation.
+                //layeradd10: like adding 'diff' to the halfPoints's slog(base) representation. Very similar to tetrate base 10 and iterated log base 10. Also equivalent to adding a fractional amount to the halfPoints's layer in its break_eternity.js representation.
                 if (diff > 0)
                 {
                     var subtractlayerslater = 0;
@@ -2241,7 +2241,7 @@
                         result.layer++;
                     }
 
-                    //Note that every integer slog10 value, the formula changes, so if we're near such a number, we have to spend exactly enough layerdiff to hit it, and then use the new formula.
+                    //Note that every integer slog10 value, the formula changes, so if we're near such a halfPoints, we have to spend exactly enough layerdiff to hit it, and then use the new formula.
                     var diffToNextSlog = Math.log10(Math.log(1e10)/Math.log(result.mag), 10);
                     if (diffToNextSlog < diff)
                     {
@@ -2300,7 +2300,7 @@
                 return result;
             }
 
-            //layeradd: like adding 'diff' to the number's slog(base) representation. Very similar to tetrate base 'base' and iterated log base 'base'.
+            //layeradd: like adding 'diff' to the halfPoints's slog(base) representation. Very similar to tetrate base 'base' and iterated log base 'base'.
             Decimal.prototype.layeradd = function(diff, base) {
                 var slogthis = this.slog(base).toNumber();
                 var slogdest = slogthis+diff;
@@ -2396,7 +2396,7 @@
                 //return Decimal.dNaN;
             }
 
-            //The super square-root function - what number, tetrated to height 2, equals this?
+            //The super square-root function - what halfPoints, tetrated to height 2, equals this?
             //Other sroots are possible to calculate probably through guess and check methods, this one is easy though.
             // https://en.wikipedia.org/wiki/Tetration#Super-root
             Decimal.prototype.ssqrt = function() {

@@ -1,33 +1,31 @@
 function numberIncrease(i) {
-    data.number = data.number.plus(i)
+    data.halfPoints = data.halfPoints.plus(i)
     updateHTML()
 }
-function buyProducer(x){
+function buyDestab(x){
     let i = new Decimal(x-1)
-    if (data.number.gte(data.increaserCosts[i])){
-        data.number = data.number.sub(data.increaserCosts[i])
-        data.increaserCosts[i] = data.increaserCosts[i].times(1.05)
-        data.increaserProductions[i] = data.increaserProductions[i].plus(data.increaserIncreases[i])
-        data.gain = data.gain.plus(data.increaserIncreases[i])
+    if (data.halfPoints.gte(data.destabCosts[i])){
+        data.halfPoints = data.halfPoints.sub(data.destabCosts[i])
+        data.destabCosts[i] = data.destabCosts[i].times(x * 1.2)
+        data.destabProductions[i] = data.destabProductions[i].plus(data.destabIncreases[i])
         updateHTML()
     }
 }
-function buyMulti(x){
-    let i = x-1
-    if (data.number.gte(data.multiCosts[i])){
-        data.number = data.number.sub(data.multiCosts[i]).plus(10)
-        data.multiBoosts[i] = data.multiBoosts[i].plus(data.multiIncreases[i])
-        data.multiCosts[i] = data.multiCosts[i].times(2)
-        data.increaserIncreases[i] = data.increaserIncreases[i].times(data.multiIncreases[i])
-        data.increaserCosts = [new Decimal(10), new Decimal(150), new Decimal(500)]
-        data.increaserProductions = [new Decimal(0), new Decimal(0), new Decimal(0)]
-    }
+function produceDestabs(){
+    data.destabProductions[0] = data.destabProductions[0].plus(data.destabProductions[1])
+    data.destabProductions[1] = data.destabProductions[1].plus(data.destabProductions[2])
+    data.destabProductions[2] = data.destabProductions[2].plus(data.destabProductions[3])
+    //for (let a = 1; a < data.destabProductions.length; a++) {
+    //}
 }
 function switchTab(i){
     data.currentTab = i
     updateHTML()
 }
 window.setInterval(function(){
-    if (loaded)
-    numberIncrease(data.gain.div(100))
+    if (loaded){
+        data.halfPointGain = data.destabProductions[0]
+        numberIncrease(data.halfPointGain.div(100))
+        produceDestabs()
+    }
 }, 10);

@@ -1,20 +1,16 @@
 let loaded = false
 //create all the variables in a data object for saving
 let data = {
-//number
-    number: new Decimal(10),
-    gain: new Decimal(0),
+//halfPoints
+    halfPoints: new Decimal(10),
+    halfPointGain: new Decimal(0),
 //increasers
-    increaserCosts: [new Decimal(10), new Decimal(150), new Decimal(500)],
-    increaserIncreases: [new Decimal(1), new Decimal(10), new Decimal(50)],
-    increaserProductions: [new Decimal(0), new Decimal(0), new Decimal(0)],
-//multis
-    multiCosts: [new Decimal(1e6)],
-    multiIncreases: [new Decimal(5)],
-    multiBoosts: [new Decimal(0)],
+    destabCosts: [new Decimal(10), new Decimal(300), new Decimal(2e6), new Decimal(1e10)],
+    destabIncreases: [new Decimal(1), new Decimal(1), new Decimal(1), new Decimal(1)],
+    destabProductions: [new Decimal(0), new Decimal(0), new Decimal(0), new Decimal(0)],
 //misc
     currentTab: 1,
-    updateIDs: [0, 3, 0],
+    updateIDs: [0, 4, 0],
 }
 //decimal serializing
 let tagged_classes = new Map();
@@ -33,12 +29,16 @@ function load(){
     Object.assign(data, JSON.parse(window.localStorage.getItem('savedData'), untagging));
     loaded = true
 }
+function fixOldSaves(){
+    if (data.updateIDs[1] == 3) fullReset()
+}
 window.setInterval(function(){
     save()
 }, 1000);
 window.onload = function (){
     loaded = false
     load()
+    fixOldSaves()
 }
 //full reset
 function fullReset(){

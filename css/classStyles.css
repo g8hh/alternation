@@ -1,43 +1,29 @@
-.producersContainer{
+.destabContainer{
     display: flex;
     flex-direction: column;
 }
-.multipliersContainer{
-    display: flex;
-    flex-direction: column;
-}
-.numberText{
+.halfPointText{
     color: white;
-    margin-left: 0.6%;
+    margin-left: 5px;
 }
-.producer{
+.destabilizer{
     color: #bfbfbf;
     background-color: rgba(150, 150, 150, 0.59);
     border: 3px solid #7e7e7e;
-    width: 15%;
+    width: 200px;
     height: 75px;
-    margin-left: 0.4%;
-    margin-top: 1%;
-    text-align: center;
-}
-.multi{
-    color: #000000;
-    background-color: rgb(0, 109, 145);
-    border: 3px solid #4c3703;
-    width: 20%;
-    height: 90px;
-    margin-left: 0.4%;
-    margin-top: 1%;
+    margin-left: 5px;
+    margin-top: 10px;
     text-align: center;
 }
 .navBar{
     display: flex;
-    margin-top: 1%;
-    margin-left: 5%;
+    margin-top: 15px;
+    margin-left: 100px;
 }
 .navButton{
-    margin-left: 1%;
-    width: 6%;
+    margin-left: 5px;
+    width: 100px;
     height: 30px;
     text-align: center;
 }

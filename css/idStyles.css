@@ -1,20 +1,20 @@
 #versionText{
     color:white;
-    margin-left: 43%;
-    margin-top: 0.5%;
+    margin-left: 655px;
+    margin-top: 5px;
     text-align: center;}
 #temporaryCredits{
     color:white;
     text-align: center;
-    margin-left: 30%;
+    margin-left: 460px;
 }
 #fullReset{
     background-color: #373737;
     color: #d60000;
-    margin-top: 10%;
-    margin-left: 36%;
+    margin-top: 100px;
+    margin-left: 550px;
 }
-#increasersNav{
+#destabilizersNav{
     color: #a5a5a5;
     background-color: #1c2829;
     border: 3px solid #005260;
