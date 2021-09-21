@@ -3,21 +3,26 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <script src="src/Formatting.js"></script>
-    <script src="src/BreakEternity.js"></script>
+    <script src="src/Internal/Formatting.js"></script>
+    <script src="src/Internal/BreakEternity.js"></script>
     <script src="src/Data.js"></script>
-    <script src="src/Game.js"></script>
     <script src="src/Update.js"></script>
+    <script src="src/Main.js"></script>
+    <script src="src/Detabs.js"></script>
+    <script src="src/HalfJump.js"></script>
     <link rel="stylesheet" type="text/css" href="css/generalStyles.css" />
     <link rel="stylesheet" type="text/css" href="css/classStyles.css" />
     <link rel="stylesheet" type="text/css" href="css/idStyles.css" />
-    <title>Incrementalal</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon" sizes="16x16">
+    <title>Alternation</title>
 </head>
 <body>
     <div class="halfPointText flexBox" id="halfPointDisplay">Your Number is 0</div>
     <div class="halfPointText flexBox" id="halfPointGainDisplay">Your Number is Increasing by 0/s</div>
     <div class="navBar flexBox">
         <button class="navButton" id="destabilizersNav" onclick="switchTab(1)">Destabilizers</button>
+        <button class="navButton" id="upgradesNav" onclick="switchTab(3)">Energizers</button>
+        <button class="navButton" id="halfJumpNav" onclick="switchTab(4)">Half Jump</button>
         <button class="navButton" id="settingsNav" onclick="switchTab(2)">Settings</button>
     </div>
     <div class="destabContainer flexBox">
@@ -26,9 +31,40 @@
         <button class="destabilizer" id="destabThree" onclick="buyDestab(3)">Destabilizer 3<br>Cost: 500<br>Produces 1 Destabilizer 2</button>
         <button class="destabilizer" id="destabFour" onclick="buyDestab(4)">Destabilizer 4<br>Cost: 500<br>Produces 1 Destabilizer 3</button>
     </div>
+    <p class="flexBox" id="upgradesTopText">Use these Energizers' great power to your advantage<br>Unlocking any Energizer will reset your Destabilizers<br>The first Energizer also provides a 2x Boost to D1</p>
+    <div class="flexBox">
+        <button class="upgrade" id="upgradeOne" onclick="buyUpgrade(1)" onmouseover="upgradeTextUpdate(0)">Destabilizing</button>
+        <button class="upgrade" id="upgradeTwo" onclick="buyUpgrade(2)" onmouseover="upgradeTextUpdate(1)">Destabilizing II</button>
+        <button class="upgrade" id="upgradeThree" onclick="buyUpgrade(3)" onmouseover="upgradeTextUpdate(2)">Destabilizing III</button>
+    </div>
+    <div class="flexBox">
+        <button class="upgrade" id="upgradeFour" onclick="buyUpgrade(4)" onmouseover="upgradeTextUpdate(3)">Destabilizing IV</button>
+        <button class="upgrade" id="upgradeFive">Unknown</button>
+        <button class="upgrade" id="upgradeSix">Unknown</button>
+    </div>
+    <div class="flexBox">
+        <button class="upgrade" id="upgradeSeven">Unknown</button>
+        <button class="upgrade" id="upgradeEight">Unknown</button>
+        <button class="upgrade" id="upgradeNine">Unknown</button>
+    </div>
+    <div class="flexBox">
+        <button class="upgrade" id="upgradeTen">Unknown</button>
+        <button class="upgrade" id="upgradeEleven">Unknown</button>
+    </div>
+    <p class="flexBox" id="upgradesText">[Hover over a Energizer to see it's effect]</p>
+    <div class="halfJumpThings flexBox">
+        <button id="halfJump" onclick="">Half Jump.</button>
+        <p id="halfJumpText1">This will reset all content except for things that explicitly say they will not be reset, but you will unlock many new powerful things, beyond your imagination.</p>
+        <p id="halfJumpText2">Will you take the risk?</p>
+        <p id="halfJumpText3">You have Half Jumped 0 Times.</p>
+    </div>
     <div class="settingsElement flexBox" id="versionText">[Alpha v0.0.0]</div>
+    <div class="settingsElement importExport flexBox">
+        <button id="export" onclick="exportSave()">Export your save (copies your save to the clipboard)</button>
+        <button id="import" onclick="importSave()">Import your save</button>
+    </div>
     <div class ="settingsElement flexBox" id="temporaryCredits"><br>Temporary Credits :)<br>
-        Credit to Jayman#8158 for a lot of help with saving<br>Credit to thepaperpilot#1210 for a lot of general help with learning js/html/css
+        Credit to Jayman#8158 for a lot of help with the save system<br>Credit to thepaperpilot#1210 for a lot of general help with learning js/html/css<br>Credit to unpingabot#4191 for a ton of help with loading saves
     </div>
     <div class="settingsElement flexBox">
         <button id="fullReset" onclick="fullReset()">Delete Your Savefile [THIS CANNOT BE UNDONE!!!!]</button>
