@@ -35,8 +35,8 @@ function buyUpgrade(x){
     if (data.halfPoints.gte(data.upgradeCosts[i]) && !data.hasUpgrade[i]){
         data.hasUpgrade[i] = true
         data.halfPoints = data.halfPoints.sub(data.upgradeCosts[i])
+        upgradeReset()
     }
-    upgradeReset()
 }
 function upgradeEffects(){
     for (let i=0; i<4; i++){
