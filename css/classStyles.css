@@ -1,14 +1,28 @@
 .flexBox {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     place-content:center
 }
 .importExport{
     margin-top: 10px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .destabContainer{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .halfPointText{
     color: white;
@@ -19,8 +33,11 @@
     background-color: rgba(150, 150, 150, 0.59);
     border: 3px solid #7e7e7e;
     width: 200px;
-    height: 75px;
+/*    height: 75px;*/
     margin-top: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     place-content:center
 }
@@ -32,10 +49,16 @@
     height: 30px;
     margin-top: 10px;
     margin-left: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     place-content:center;
 }
 .navBar{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 15px;
 }
@@ -46,5 +69,9 @@
     text-align: center;
 }
 .halfJumpThings{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }

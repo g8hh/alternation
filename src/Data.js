@@ -109,7 +109,7 @@ function exportSave(){
     document.body.removeChild(exportedDataText);
 }
 function importSave(){
-    let importedData = prompt("Paste your save data here!")
+    let importedData = prompt("在这里粘贴你的存档！")
     data = Object.assign(getDefaultObject(), JSON.parse(atob(importedData)))
     save()
     location.reload()
