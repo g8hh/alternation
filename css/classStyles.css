@@ -1,0 +1,50 @@
+.flexBox {
+    display: flex;
+    align-items: center;
+    place-content:center
+}
+.importExport{
+    margin-top: 10px;
+    flex-direction: column;
+}
+.destabContainer{
+    flex-direction: column;
+}
+.halfPointText{
+    color: white;
+    margin-left: 5px;
+}
+.destabilizer{
+    color: #bfbfbf;
+    background-color: rgba(150, 150, 150, 0.59);
+    border: 3px solid #7e7e7e;
+    width: 200px;
+    height: 75px;
+    margin-top: 10px;
+    display: flex;
+    place-content:center
+}
+.upgrade{
+    color: #80a400;
+    background-color: rgb(64, 64, 46);
+    border: 3px solid #515151;
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    place-content:center;
+}
+.navBar{
+    display: flex;
+    margin-top: 15px;
+}
+.navButton{
+    margin-left: 5px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+.halfJumpThings{
+    flex-direction: column;
+}
